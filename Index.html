@@ -14,20 +14,22 @@
         table {
         font-size: 20pt;
         color: white;
-        
-      
         }
-   
 
         </style>
         <script type="text/javascript" src="js/js.test"></script>
         <script type="text/javascript" defer src="js/js_serach.js"></script>
         <script type="text/javascript" defer src="js/js_popup.js"></script>
+        <script type="text/javascript" defer src="js/data_type.js"></script>
+
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
+
+      </head>
 <body style="background-color: black;" onload="pop_up();"></body>
     <div style="display: flex; justify-content: center;">
-        <img src="image/logn.png" width="200" height="60">
+        <img src="image/logn.png" width="150" height="80" onmouseover="over(this)" onmouseout="out(this)">
+        
+
          <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Navbar</a>
@@ -53,6 +55,24 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">게시판</a>
                   </li>
+
+
+
+                  <!--<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-primary">1</button>
+                    <button type="button" class="btn btn-primary">2</button>
+                  
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">게시판</a></li>
+                        <li><a class="dropdown-item" href="#">게시판</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                -->
 
 
                   <li class="nav-item">
