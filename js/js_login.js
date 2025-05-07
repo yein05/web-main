@@ -1,5 +1,16 @@
-
-    const check_xss = (input) => {
+        function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
+        const emailInput = document.getElementById('typeEmailX');
+        const idsave_check = document.getElementById('idSaveCheck');
+        let get_id = getCookie("id");
+        if(get_id) {
+        emailInput.value = get_id;
+        idsave_check.checked = true;
+        }
+        session_check(); // 세션 유무 검사
+        }
+        
+        
+        const check_xss = (input) => {
         // DOMPurify 라이브러리 로드 (CDN 사용)
         const DOMPurify = window.DOMPurify;
         // 입력 값을 DOMPurify로 sanitize
@@ -25,12 +36,12 @@
 
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
+    const sanitizedPassword = check_xss(passwordValue);
+    // check_xss 함수로 비밀번호 Sanitize
+    const sanitizedEmail = check_xss(emailValue);
+    // check_xss 함수로 비밀번호 Sanitize
+    const idsave_check = document.getElementById('idSaveCheck');
 
-
-    const sanitizedPassword = check_xss(passwordInput);
-// check_xss 함수로 비밀번호 Sanitize
-const sanitizedEmail = check_xss(emailInput);
-// check_xss 함수로 비밀번호 Sanitize
 
     if (emailValue === '') {
     alert('이메일을 입력하세요.');
@@ -76,10 +87,43 @@ const sanitizedEmail = check_xss(emailInput);
             return false;
             }
 
+            if(idsave_check.checked == true) { // 아이디 체크 o
+                alert("쿠키를 저장합니다.", emailValue);
+                setCookie("id", emailValue, 1); // 1일 저장
+                alert("쿠키 값 :" + emailValue);
+             }
+            else{ // 아이디 체크 x
+                setCookie("id", emailValue.value, 0); //날짜를 0 - 쿠키 삭제
+                }
+
 
         console.log('이메일:', emailValue);
         console.log('비밀번호:', passwordValue);
+
+        session_set(); 
         loginForm.submit();
          };
+
+
+         function setCookie(name, value, expiredays) {
+            var date = new Date();
+            date.setDate(date.getDate() + expiredays);
+            document.cookie = escape(name) + "=" + escape(value) + ";expires=" + date.toUTCString() + "; path=/";
+            }
+    
+            function getCookie(name) {
+                var cookie = document.cookie;
+                console.log("쿠키를 요청합니다.");
+                if (cookie != "") {
+                var cookie_array = cookie.split("; ");
+                for ( var index in cookie_array) {
+                var cookie_name = cookie_array[index].split("=");
+                if (cookie_name[0] == "id") {
+                return cookie_name[1];
+                }
+                }
+                }
+                return ;
+                }
 
     document.getElementById("login_btn").addEventListener('click', check_input);
