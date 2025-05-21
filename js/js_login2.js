@@ -14,7 +14,9 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            init();
+           
+            checkAuth();
+            init_logined();
          });
 
         function init_logined(){
