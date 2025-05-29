@@ -1,6 +1,8 @@
         import { session_set, session_get, session_check } from './session.js';
         import { encrypt_text, decrypt_text } from './js_crypto.js';
         import { generateJWT, checkAuth } from './jwt_token.js';
+    
+
 
         function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
             const emailInput = document.getElementById('typeEmailX');

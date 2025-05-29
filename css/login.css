@@ -1,0 +1,28 @@
+/* 전체 초기화 및 설정 */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 배경 그라디언트 설정 */
+.gradient-custom {
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  height: 100vh; /* 💡 핵심: 무조건 100% 높이로 고정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 로그인 카드 */
+.login-card {
+  background-color: #2c2c2c;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
