@@ -77,13 +77,13 @@
     }
 
 
-    if (emailValue.length < 5) {
-        alert('아이디는 최소 5글자 이상 입력해야 합니다.');
+    if (emailValue.length < 10) {
+        alert('아이디는 최소 10글자 이상 입력해야 합니다.');
         return false;
         }
 
-     if (passwordValue.length < 12) {
-        alert('비밀번호는 반드시 12글자 이상 입력해야 합니다.');
+     if (passwordValue.length < 15) {
+        alert('비밀번호는 반드시 15글자 이상 입력해야 합니다.');
         return false;
         }
          const hasSpecialChar = passwordValue.match(/[!,@#$%^&*()_+\- =\[\]{};':"\\|,.<>\/?]+/) !== null;
